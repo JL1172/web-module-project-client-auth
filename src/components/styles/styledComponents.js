@@ -108,11 +108,35 @@ form {
     }
     input {
         margin-top : 2rem;
-        height : 1.5rem;
+        height : 1.75rem;
         width : 15rem;
     }
     input[type=text], input[type=password] {
-        
+        outline : 1px solid rgb(117, 214, 191);;
+        border : none;
+        border-radius : 2rem;
+        padding-left : 1rem;
+        transition : .1s;
+        &:hover {
+            box-shadow : 0 0 10px rgb(117, 214, 191);
+            transition : .1s;
+        }
+    }
+    input[type=submit] {
+        background-color   : rgb(117, 214, 191);
+        border : none;
+        border-radius : 2rem;
+        height : 2rem;
+        outline : 2px solid rgb(117, 214, 191);
+        outline-offset : -4px;
+        transition : .1s ease-in-out; 
+        &:hover {
+            outline-offset : 4px;
+            transition : .1s ease-in-out; 
+        }
+        &:active {
+            outline-offset : 10px;
+        }
     }
 } 
 `
