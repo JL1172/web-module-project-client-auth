@@ -141,3 +141,28 @@ form {
     }
 } 
 `
+export const CardContainer = styled.div`
+display : flex;
+justify-content : space-evenly;
+align-items : center;
+height : 100vh;
+width : 100%;
+flex-wrap : wrap;
+margin-top : 5rem;
+background-image : url("https://www.svgrepo.com/show/303351/friends-logo.svg");
+`
+
+export const Card = styled.div`
+    flex-basis  :40rem;
+    box-shadow : 0 0 1em lightgray;
+    flex-grow : 2;
+    height : 10rem;
+    width : 20rem;
+    display :flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : center;
+    div {
+        font-size : 24px;
+    }
+`

@@ -1,4 +1,6 @@
 import React from "react"
+import { axiosWithAuth } from "./axiosWithAuth/axiosWithAuth";
+import axios from "axios";
 
 export default class AddFriend extends React.Component {
     constructor() {
@@ -9,6 +11,7 @@ export default class AddFriend extends React.Component {
     }
     componentDidMount() {
         console.log("adding friends page ")
+     
     }
     render() {
         return (
