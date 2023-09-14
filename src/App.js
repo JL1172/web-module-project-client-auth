@@ -40,8 +40,8 @@ function App() {
         <Route path="/login" element={<LoginPage nav = {nav}/>} />
         <Route path="/" element={<LoginPage />} />
         <Route path="/logout" element={<LogoutPage />} />
-        <Route path="/friendList" element={<ProtectedList />} />
-        <Route path="/addFriend" element={<ProtectedAdd />} />
+        <Route path="/friendList" element={<ProtectedList  />} />
+        <Route path="/addFriend" element={<ProtectedAdd  nav = {nav} />} />
       </Routes>
     </StyledDiv>
   );

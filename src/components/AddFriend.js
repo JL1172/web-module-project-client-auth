@@ -28,10 +28,11 @@ export default class AddFriend extends React.Component {
     add = (e) => {
         e.preventDefault();
         const obj = {id : Date.now(), name :
-        this.state.firstname, age : Math.floor(Math.random()* 51), email : this.state.email}
+        this.state.firstname, age : Math.floor((Math.random()* 51)+ 10), email : this.state.email}
         axiosWithAuth().post("http://localhost:9000/api/friends",obj)
         .then(res=> {
-            console.log(res)
+            this.setState({...this.state, firstname : '', email : ""})
+            this.props.nav("/friendlist")
         })
         .catch(err=> console.error(err.message)); 
     }

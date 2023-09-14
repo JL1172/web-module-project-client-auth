@@ -2,9 +2,9 @@ import { Circles } from "react-loader-spinner";
 import React from "react";
 import AddFriend from "./AddFriend";
 
-export default function ProtectedAdd() {
+export default function ProtectedAdd(props) {
     if (window.localStorage.getItem("token")) {
-        return <AddFriend />
+        return <AddFriend nav = {props.nav}/>
     } else {
         return<div style={{ flexDirection : "column",height : "100vh", width : "100%", display  :"flex", justifyContent : "center", alignItems: "center"}}>
         <Circles
