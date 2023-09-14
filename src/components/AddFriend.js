@@ -8,7 +8,6 @@ export default class AddFriend extends React.Component {
     constructor() {
         super();
         this.state = {
-            friends: [],
             firstname: "",
             email: "",
             loading: false,
@@ -28,7 +27,13 @@ export default class AddFriend extends React.Component {
     }
     add = (e) => {
         e.preventDefault();
-
+        const obj = {id : Date.now(), name :
+        this.state.firstname, age : Math.floor(Math.random()* 51), email : this.state.email}
+        axiosWithAuth().post("http://localhost:9000/api/friends",obj)
+        .then(res=> {
+            console.log(res)
+        })
+        .catch(err=> console.error(err.message)); 
     }
     render() {
         return (

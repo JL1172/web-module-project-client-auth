@@ -1,7 +1,7 @@
 import React from "react"
 import { axiosWithAuth } from "./axiosWithAuth/axiosWithAuth";
 import { Circles } from "react-loader-spinner";
-import { Card, CardContainer } from "./styles/styledComponents";
+import { Card, CardContainer, Wrapper } from "./styles/styledComponents";
 
 export default class FriendsList extends React.Component {
     constructor() {
@@ -37,6 +37,8 @@ export default class FriendsList extends React.Component {
                         <h2>Fetching</h2>
                     </div>
                     :
+                    <Wrapper id = "wrapper">
+                        <h1>Friends List</h1>
                     <CardContainer >
                         {this.state.friends.map(n => {
                             return <Card key={n.id}>
@@ -49,6 +51,7 @@ export default class FriendsList extends React.Component {
                             </Card>
                         })}
                     </CardContainer>
+                    </Wrapper>
                 }
             </div>
         )

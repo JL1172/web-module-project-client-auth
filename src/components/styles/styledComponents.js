@@ -148,9 +148,7 @@ align-items : center;
 height : 100vh;
 width : 100%;
 flex-wrap : wrap;
-margin-top : 5rem;
-background-image : url("https://www.svgrepo.com/show/303351/friends-logo.svg");
-background-position : 400% 650%;
+margin-top : 2rem;
 `
 
 export const Card = styled.div`
@@ -164,8 +162,18 @@ export const Card = styled.div`
     align-items : flex-start;
     padding-left : 3rem;
     justify-content : space-evenly;
+    background-color : white;
+    &:hover {
+        filter : brightness(95%); 
+    }
     div {
         font-size : 24px;
-        
+    }
+`
+export const Wrapper = styled.div`
+display : flex;
+flex-direction : column;
+    h1 {
+        margin-top : 20rem;
     }
 `
