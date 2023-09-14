@@ -7,7 +7,7 @@ width : 100%;
 background-color : whitesmoke; 
 display : flex;
 justify-content  :center;
-align-items : flex-start;
+align-items : center;
 `
 
 export const StyledHeading = styled.div`
@@ -71,4 +71,48 @@ a {
     transition : .15s ease-in-out;
 }
 
+`
+export const StyledLogin = styled.div`
+box-shadow : 0 0 2em lightgray;
+border-radius : 2rem;
+height : 30rem;
+width : 25rem;
+img {
+    width : 5rem;
+    height : 5rem;
+}
+#loginTop {
+    background-color : rgb(49, 175, 145);
+    padding : 2rem;
+    border-top-left-radius : 2rem;
+    border-top-right-radius : 2rem;
+}
+form {
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    height : 15rem;
+    flex-direction : column;
+}
+.positioned {
+    position : relative;
+    display :flex;
+    align-items : center;
+    justify-content : flex-end;
+    .visible, #visible {
+        width : 25px;
+        height : 25px;
+        position : absolute;
+        top  : 2.2rem;
+        margin-right : .2rem;
+    }
+    input {
+        margin-top : 2rem;
+        height : 1.5rem;
+        width : 15rem;
+    }
+    input[type=text], input[type=password] {
+        
+    }
+} 
 `
