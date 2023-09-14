@@ -27,6 +27,7 @@ export default class FriendsList extends React.Component {
         const fil = this.state.friends.filter(n => n.id !== id);
         this.setState({ ...this.state, friends: this.state.friends.filter(n => n.id !== id), filteredList: [...this.state.filteredList, fil] })
     }
+    
     render() {
         return (
             <div>
