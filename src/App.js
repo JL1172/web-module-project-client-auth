@@ -4,8 +4,14 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import LogoutPage from './components/LogoutPage';
 import { StyledDiv, StyledHeading } from './components/styles/styledComponents';
+import { useNavigate } from 'react-router-dom';
+import FriendsList from './components/FriendsList';
+import AddFriend from './components/AddFriend';
+import ProtectedList from './components/ProtectedRouteForList';
+import ProtectedAdd from './components/ProtectedRouteForAdd';
 
 function App() {
+  const nav = useNavigate(); 
   return (
     <StyledDiv className="App">
       <StyledHeading id="headerTags">
@@ -31,10 +37,11 @@ function App() {
         </div>
       </StyledHeading>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage nav = {nav}/>} />
         <Route path="/" element={<LoginPage />} />
         <Route path="/logout" element={<LogoutPage />} />
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/friendList" element={<ProtectedList />} />
+        <Route path="/addFriend" element={<ProtectedAdd />} />
       </Routes>
     </StyledDiv>
   );

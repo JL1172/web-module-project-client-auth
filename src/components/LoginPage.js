@@ -1,5 +1,7 @@
 import React from "react";
 import { StyledLogin } from "./styles/styledComponents";
+import axios from "axios";
+
 
 export default class LoginPage extends React.Component {
     constructor() {
@@ -20,6 +22,12 @@ export default class LoginPage extends React.Component {
     }
     login = (e) => {
         e.preventDefault(); 
+        axios.post("http://localhost:9000/api/login",this.state.credentials)
+        .then(res=> {
+            window.localStorage.setItem("token", JSON.stringify(res.data.token))
+            this.props.nav("/FriendList");
+        })
+        .catch(err=> console.error(err.message)); 
     }
     render() {
         return (
