@@ -105,6 +105,7 @@ form {
         position : absolute;
         top  : 2.2rem;
         margin-right : .2rem;
+        transition : .2s;
     }
     input {
         margin-top : 2rem;

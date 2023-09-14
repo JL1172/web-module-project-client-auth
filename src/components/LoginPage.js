@@ -8,7 +8,8 @@ export default class LoginPage extends React.Component {
             credentials: {
                 username: "",
                 password: "",
-            }
+            },
+            visible : false
         }
     }
     change = (e) => {
@@ -17,6 +18,9 @@ export default class LoginPage extends React.Component {
                 { ...this.state.credentials, [e.target.name]: e.target.value }
         })
     }
+    login = (e) => {
+        e.preventDefault(); 
+    }
     render() {
         return (
             <StyledLogin>
@@ -24,7 +28,7 @@ export default class LoginPage extends React.Component {
                     <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7915728/user-icon-sm.png" />
                     <h2>Login</h2>
                 </div>
-                <form>
+                <form onSubmit={this.login}>
                     <div className="positioned" >
                         <input type="text" value={this.state.credentials.username} placeholder="Username" name="username" onChange={(e) => this.change(e)} />
                         <span id = "visible" className="material-symbols-outlined">
@@ -32,8 +36,10 @@ export default class LoginPage extends React.Component {
                         </span>
                     </div>
                     <div className="positioned">
-                        <input type="password" placeholder="Password" value={this.state.credentials.password} name="password" onChange={(e) => this.change(e)} />
-                        <img className="visible" src="https://cdn.icon-icons.com/icons2/2406/PNG/512/eye_slash_visible_hide_hidden_show_icon_145987.png" />
+                        <input type={this.state.visible ? "password" : "text" }placeholder="Password" value={this.state.credentials.password} name="password" onChange={(e) => this.change(e)} />
+                        <img onClick={()=>this.setState({...this.state, visible  : !this.state.visible})} 
+                        className="visible" src={!this.state.visible ? "https://cdn.icon-icons.com/icons2/2406/PNG/512/eye_visible_hide_hidden_show_icon_145988.png"
+                        :"https://cdn.icon-icons.com/icons2/2406/PNG/512/eye_slash_visible_hide_hidden_show_icon_145987.png" }/>
                     </div>
                     <div className="positioned">
                         <input type="submit" value="Login" />
