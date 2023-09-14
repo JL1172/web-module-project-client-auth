@@ -44,9 +44,9 @@ export default class LoginPage extends React.Component {
                         </span>
                     </div>
                     <div className="positioned">
-                        <input type={this.state.visible ? "password" : "text" }placeholder="Password" value={this.state.credentials.password} name="password" onChange={(e) => this.change(e)} />
+                        <input type={!this.state.visible ? "password" : "text" }placeholder="Password" value={this.state.credentials.password} name="password" onChange={(e) => this.change(e)} />
                         <img onClick={()=>this.setState({...this.state, visible  : !this.state.visible})} 
-                        className="visible" src={!this.state.visible ? "https://cdn.icon-icons.com/icons2/2406/PNG/512/eye_visible_hide_hidden_show_icon_145988.png"
+                        className="visible" src={this.state.visible ? "https://cdn.icon-icons.com/icons2/2406/PNG/512/eye_visible_hide_hidden_show_icon_145988.png"
                         :"https://cdn.icon-icons.com/icons2/2406/PNG/512/eye_slash_visible_hide_hidden_show_icon_145987.png" }/>
                     </div>
                     <div className="positioned">

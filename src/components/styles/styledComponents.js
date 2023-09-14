@@ -99,7 +99,7 @@ form {
     display :flex;
     align-items : center;
     justify-content : flex-end;
-    .visible, #visible {
+    #visible2, #visible, .visible {
         width : 25px;
         height : 25px;
         position : absolute;
@@ -112,7 +112,7 @@ form {
         height : 1.75rem;
         width : 15rem;
     }
-    input[type=text], input[type=password] {
+    input[type=text], input[type=password], input[type=email] {
         outline : 1px solid rgb(117, 214, 191);;
         border : none;
         border-radius : 2rem;
