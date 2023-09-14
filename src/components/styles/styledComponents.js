@@ -150,19 +150,22 @@ width : 100%;
 flex-wrap : wrap;
 margin-top : 5rem;
 background-image : url("https://www.svgrepo.com/show/303351/friends-logo.svg");
+background-position : 400% 650%;
 `
 
 export const Card = styled.div`
     flex-basis  :40rem;
     box-shadow : 0 0 1em lightgray;
     flex-grow : 2;
-    height : 10rem;
+    height : 13rem;
     width : 20rem;
     display :flex;
     flex-direction : column;
-    align-items : center;
-    justify-content : center;
+    align-items : flex-start;
+    padding-left : 3rem;
+    justify-content : space-evenly;
     div {
         font-size : 24px;
+        
     }
 `

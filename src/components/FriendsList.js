@@ -16,7 +16,7 @@ export default class FriendsList extends React.Component {
         this.setState({ ...this.state, loading: true })
         axiosWithAuth().get("http://localhost:9000/api/friends")
             .then(res => {
-                this.setState({...this.state, friends : res.data, loading : false})
+                this.setState({ ...this.state, friends: res.data, loading: false })
             })
             .catch(err => console.error(err.message));
     }
@@ -38,15 +38,18 @@ export default class FriendsList extends React.Component {
                     </div>
                     :
                     <CardContainer >
-                        {this.state.friends.map(n=> {
-                           return <Card key = {n.id}>
-                                <div>{n.name}</div>
-                                <div>{n.age}</div>
-                                <div>{n.email}</div>
+                        {this.state.friends.map(n => {
+                            return <Card key={n.id}>
+                                <div><b>Name :</b> {n.name}</div>
+                                <div><b>Age :</b> {n.age}</div>
+                                <div style = {{display : "flex", alignItems : "center"}}><span className="material-symbols-outlined">
+                                    mail
+                                </span>{n.email}
+                                </div>
                             </Card>
                         })}
-                        </CardContainer>
-                    }
+                    </CardContainer>
+                }
             </div>
         )
     }
